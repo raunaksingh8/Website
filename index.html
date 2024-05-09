@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="codetest.css">
+
+  <title>Project 2.1</title>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="firstnavbar">
+      <div class="left-section">
+        <span class="name" style="font-size: 16px; margin-left: 0.2vw;"> &#x1F4CD; 1403 Washington Ave, United
+          States</span>
+        <span class="number" style="font-size: 16px;">&#9743; (+150)-4899-8221</span>
+        <span class="mail" style="font-size: 16px;">&#128231; info@traga.com</span>
+      </div>
+      <div class="right-section">
+        <span class="Follow">Follow Us On :</span>
+        <span class="Facebook"> <img
+            src="https://static.vecteezy.com/system/resources/previews/020/964/386/original/facebook-circle-icon-for-web-design-free-png.png"
+            alt="Facebook" width="20" height="20" style="margin-left: 1vw; border-radius: 50%;"></span>
+        <span class="twitter"> <img
+            src="data:image/png;base64,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"
+            alt="twitter" width="20" height="20" style="margin-left: 1vw; border-radius: 50%;"></span>
+        <span class="Youtube"> <img
+            src="data:image/png;base64,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"
+            alt="Youtube" width="20" height="20" style="margin-left: 1vw; border-radius: 50%;"></span>
+        <span class="Instagram"> <img
+            src="data:image/jpeg;base64,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"
+            alt="Instagram" width="20" height="20" style="margin-left: 1vw; border-radius: 50%;"></span>
+      </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+      <div class="container-fluid">
+        <a class="image" href="#">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/logo.svg">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                HOME
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E1EAFF;">
+                <li><a class="dropdown-item" href="#">Digital Agency</a></li>
+                <li><a class="dropdown-item" href="#">Web Development</a></li>
+                <li><a class="dropdown-item" href="#">Software Company</a></li>
+                <li><a class="dropdown-item" href="#">Startup Company</a></li>
+                <li><a class="dropdown-item" href="#">IT Solutions</a></li>
+                <li><a class="dropdown-item" href="#">Web Agency</a></li>
+                <li><a class="dropdown-item" href="#">App Landing</a></li>
+                <li><a class="dropdown-item" href="#">Sass Landing</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">ABOUT US</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle drop" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                SERVICES
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E1EAFF;">
+                <li><a class="dropdown-item" href="#">Services</a></li>
+                <li><a class="dropdown-item" href="#">Service Details</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle pages" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                PAGES
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E1EAFF;">
+
+                <div class="btn-group dropend" style="position: relative;">
+                  <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Shop Page
+                  </button>
+                </div>
+                <li><a class="dropdown-item" href="#">Team</a></li>
+                <li><a class="dropdown-item" href="#">Team Details</a></li>
+                <li><a class="dropdown-item" href="#">Projects</a></li>
+                <li><a class="dropdown-item" href="#">Project Details</a></li>
+                <li><a class="dropdown-item" href="#">Gallery</a></li>
+                <li><a class="dropdown-item" href="#">Pricing</a></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Error Page</a></li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle blogs" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                BLOGS
+              </a>
+              <ul class="dropdown-menu" style="background-color: #E1EAFF;">
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Blog Details</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active contact" href="#">CONTACT US</a>
+            </li>
+
+
+          </ul>
+
+          <div class="icons justify-content-start align-items-center">
+            <span class="navbar-text" style="margin-right: 0.1vw;">
+              <button class="btn btn-primary"
+                style="width: 55px; height: 55px; border-radius: 50%; background-color: white; border-color: white;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.85-5-5.66-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.19 5.34 5.66a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </span>
+
+            <span class="navbar-text" style="margin-left: 0.5vw;">
+              <button class="btn btn-primary"
+                style="width: 55px; height: 55px; border-radius: 50%; background-color: white; border-color: white;">
+                <span style="color: black;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 10.71a2 2 0 0 0 2 1.46h10.64a2 2 0 0 0 2-1.46L23 5H6"></path>
+                  </svg>
+                </span>
+              </button>
+            </span>
+
+            <button type="button" class="btn btn-primary btn-lg"
+              style="font-size: 15px; margin-left: 0.8vw; padding: 1vw 1vw; font-weight: 600; ">MAKE
+              APPOINTMENT
+              &rarr;</button>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+    <!-- Main content goes here -->
+
+    <div class="content">
+
+      <div class="left">
+
+        <!-- Heading 2 -->
+        <h2>
+          BEST MARKETING SERVICES </h2>
+
+        <!-- Heading 1 -->
+        <h1>
+          <b>Make The Easiest<br>Solution For You</b>
+        </h1>
+
+        <!-- Paragraph -->
+        <p>
+          Energistically harness ubiquitous imperatives without state of the art collaboration and idea-sharing.
+          Monotonectally parallel task cross-unit experiences and front-end.</p>
+
+        <!-- Button -->
+        <div class="last">
+          <button type="button" class="button btn-primary btn-lg"> ABOUT US &rarr; </button>
+          <h5> Watch Our Story <br><span> Subscribe Now</span></h5>
+        </div>
+
+
+
+      </div>
+
+      <div class="right">
+
+        <!-- Image -->
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/hero_img_4_1.png"
+          alt="Description of the image">
+
+      </div>
+
+    </div>
+
+    <div class="content2">
+
+      <div class="left1">
+
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/about_3_1.png"
+          alt="Description of the image">
+
+      </div>
+
+      <div class="right1">
+
+        <div class="first">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+            alt="Description of the image">
+          <h5>ABOUT TRAGA IT SOLUTIONS</h5>
+          <h1><b>We Are Increasing Business <br> Success With <span>Technology</span></b></h1>
+          <p>
+            Synergistically
+            incentivize effective imperatives through fully researched intellectual capital. Appropriately
+            fashion client-based.</p>
+        </div>
+
+        <div class="second">
+
+          <p>
+            <button id="collapseButton" class="btn btn-primary" type="button" aria-expanded="false"
+              aria-controls="collapseWidthExample">
+              AWARD WINNING
+            </button>
+          </p>
+
+          <p>
+            <button id="collapseButton1" class="btn btn-primary" type="button" data-bs-target="#collapseWidthExample2"
+              aria-expanded="false" aria-controls="collapseWidthExample2">
+              TECHNOLOGY INDEX
+            </button>
+          </p>
+        </div>
+
+
+        <div class="card5">
+
+          <div class="third show" id="collapseWidthExample">
+            <div class="card card-body">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/about_3_1_1.jpg"
+                alt="Description of the image">
+              <div class="sub">
+                <h2><b>An Award-Winning Company.</b></h2>
+                <p>Monotonically matrix extensible applications and go forward communities. Synergistically extend
+                  client-based manufactured.</p>
+                <button type="button" class="btn btn-primary btn-lg">ABOUT MORE</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="fourth">
+            <div class="collapse" id="collapseWidthExample2">
+              <div class="card2 card-body">
+                <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/about_3_1_2.jpg"
+                  alt="Description of the image">
+
+                <div class="sub2">
+                  <h2><b>Having 25+ Years Of Experience.</b></h2>
+                  <p> Monotonically matrix extensible applications and go forward communities. Synergistically extend
+                    client-based manufactured.</p>
+                  <button type="button" class="btn btn-primary btn-lg">
+                    ABOUT MORE
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="content3">
+      <div class="card3">
+        <div class="card-container">
+          <div class="cardv">
+            <div class="cardv21">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+                alt="Description of the image">
+
+              <h1>LATEST PROJECT</h1>
+            </div>
+
+            <h2> We Provide Exclusive Service<br> For <span> Your Business</span></h2>
+          </div>
+          <div class="cardz">
+            <button type="button" class="btn btn-primary btn-lg"> VIEW ALL SERVICES &rarr;</button>
+          </div>
+        </div>
+
+        <div class="cardx">
+
+          <!-- Smaller Card -->
+          <div class="smallcard">
+            <div class="circle-card1">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/service_card_2.svg">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">UI/UX Design</h5>
+              <p class="card-text">Continually engage customised information and quality growth strategies.
+                Appropriately.</p>
+              <a href="#" class="btn btn">READ MORE &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Smaller Card2 -->
+          <div class="smallcard2">
+            <div class="circle-card2">
+              <!-- Content -->
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/service_card_3.svg">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Digital Marketing</h5>
+              <p class="card-text">Continually engage customised information and quality growth strategies.
+                Appropriately.</p>
+              <a href="#" class="btn btn-primary">READ MORE &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Smaller Card 3 -->
+          <div class="smallcard3">
+            <div class="circle-card3">
+              <!-- Content -->
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/service_card_4.svg">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Business Analysis</h5>
+              <p class="card-text">Continually engage customised information and quality growth strategies.
+                Appropriately.</p>
+              <a href="#" class="btn btn-primary">READ MORE &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Smaller Card 4 -->
+          <div class="smallcard4">
+            <div class="circle-card4">
+              <!-- Content -->
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/service_card_5.svg">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Software Services</h5>
+              <p class="card-text">Continually engage customised information and quality growth strategies.
+                Appropriately.</p>
+              <a href="#" class="btn btn-primary">READ MORE &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content4">
+
+      <div class="left2">
+
+        <div class="first2">
+          <div class="first21">
+            <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+              alt="Description of the image">
+            <h5>WHY CHOOSE US ?</h5>
+          </div>
+          <h1><b>More Than 24+ Years Experience We Provide<span> IT Services</span></b></h1>
+          <p>
+            Collaboratively envisioneer user friendly supply chains and cross unit imperative. Authoritativel fabricate
+            competitive resource and holistic. Holisticly restore real time resources whereas standardized networks.
+          </p>
+
+          <div class="progress-container">
+            <svg class="progress" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="10"></circle>
+              <!-- White circle -->
+              <circle class="progress-bar" cx="50" cy="50" r="40" fill="none" stroke="#3366ff" stroke-width="10"
+                stroke-dasharray="251" stroke-dashoffset="151"></circle> <!-- Blue progress bar -->
+            </svg>
+
+            <div class="progress-value"><strong>90%</strong></div>
+          </div>
+          <h3><b>Business Grow</b><span>Efficiently transition top-line<br> ideas before market.</span></h3>
+
+          <div class="progress-container">
+            <svg class="progress" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="10"></circle>
+              <!-- White circle -->
+              <circle class="progress-bar" cx="50" cy="50" r="40" fill="none" stroke="#3366ff" stroke-width="10"
+                stroke-dasharray="251" stroke-dashoffset="0"></circle> <!-- Blue progress bar -->
+            </svg>
+
+            <div class="progress-value"><strong>95%</strong></div>
+          </div>
+          <h3><b>Quality Products</b><span>Efficiently transition top-line<br> ideas before market.</span></h3>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg"> LEARN MORE &rarr;</button>
+
+      </div>
+
+
+      <div class="right2">
+        <div class="conta5">
+          <div class="circle-card">
+            <h3><b>10k+</b></h3>
+            <h4>Active Clients</h4>
+          </div>
+        </div>
+
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/why_2_1.png"
+          alt="Description of the image">
+      </div>
+
+
+
+    </div>
+
+
+    <div class="content5">
+      <div class="left3">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+          alt="Description of the image">
+        <h5>PROJECTS</h5>
+      </div>
+      <div class="left31">
+        <h1>Our Recents Latest <span>Projects</span></h1>
+      </div>
+      <div class="right3">
+        <div class="right-card1">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/project_2_2.jpg"
+            class="card-img-top1">
+          <div class="card-body1">
+            <h1><b>Web Development</b></h1>
+            <p class="card-text1">Distinctively enable premiuim expertise for multifunctional action items.
+              Energistically benchmark worldwide communities.</p>
+          </div>
+        </div>
+        <div class="right-card2">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/project_2_3.jpg"
+            class="card-img-top2">
+          <div class="card-body2">
+            <h1><b>Web Design</b></h1>
+            <p class="card-text2">Distinctively enable premiuim expertise for multifunctional action items.
+              Energistically benchmark worldwide communities.</p>
+          </div>
+        </div>
+        <div class="right-card3">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/project_2_1.jpg"
+            class="card-img-top3">
+          <div class="card-body3">
+            <h1><b>IT Consultency</b></h1>
+            <p class="card-text3">Distinctively enable premiuim expertise for multifunctional action items.
+              Energistically benchmark worldwide communities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="last3">
+        <div class="last-card3">
+          <div class="last-card31">
+            <div class="last-card311">
+              <div class="circle-card31">
+                <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/counter_1_1.svg">
+              </div>
+              <h1>986+<br><span>Finished Projects</span></h1>
+            </div>
+            <div class="last-card312">
+              <div class="circle-card32">
+                <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/counter_1_2.svg">
+              </div>
+              <h1>896+<br><span>Happy Clients</span></h1>
+            </div>
+          </div>
+          <div class="last-card32">
+            <div class="last-card321">
+              <div class="circle-card33">
+                <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/counter_1_3.svg">
+              </div>
+              <h1>396+<br><span>Skilled Experts</span></h1>
+            </div>
+            <div class="last-card322">
+              <div class="circle-card34">
+                <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/01/counter_1_4.svg">
+              </div>
+              <h1>496+<br><span>Honorable Awards</span></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content6">
+
+      <div class="left4">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+          alt="Description of the image">
+        <h5> WORK PROCESS</h5>
+      </div>
+
+      <div class="left41">
+        <h1>How To Work <span> It!</span></h1>
+      </div>
+
+      <div class="right4">
+        <div class="right-card41">
+          <div class="circle-card41">
+            <h1>01</h1>
+          </div>
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/process_card_1.svg"
+            class="card-img-top41">
+          <div class="card-body41">
+            <h1><b>Select a Project</b></h1>
+            <p class="card-text41">Continua scale empowered metrics with cost effective innovation.</p>
+          </div>
+        </div>
+        <div class="right-card42">
+          <div class="circle-card42">
+            <h1>02</h1>
+          </div>
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/process_card_2.svg"
+            class="card-img-top42">
+          <div class="card-body42">
+            <h1><b>Project Analysis</b></h1>
+            <p class="card-text42">Continua scale empowered metrics with cost effective innovation.</p>
+          </div>
+        </div>
+        <div class="right-card43">
+          <div class="circle-card43">
+            <h1>03</h1>
+          </div>
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/process_card_3.svg"
+            class="card-img-top43">
+          <div class="card-body43">
+            <h1><b>Plan Execute</b></h1>
+            <p class="card-text43">Continua scale empowered metrics with cost effective innovation.</p>
+          </div>
+        </div>
+        <div class="right-card44">
+          <div class="circle-card44">
+            <h1>04</h1>
+          </div>
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/process_card_4.svg"
+            class="card-img-top44">
+          <div class="card-body44">
+            <h1><b>Deliver Result</b></h1>
+            <p class="card-text44">Continua scale empowered metrics with cost effective innovation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="last4">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/brand_2_1.png">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/brand_2_2.png">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/brand_2_3.png">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/brand_2_4.png">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/brand_2_5.png">
+      </div>
+
+    </div>
+
+
+    <div class="content7">
+      <div class="left5">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+          alt="Description of the image">
+        <h5> GREAT TEAM</h5>
+      </div>
+
+      <div class="left51">
+        <h1>See Our Expert Skilled <span> Team</span></h1>
+      </div>
+
+      <div class="right5">
+        <div class="right-card51">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/team_3_2.jpg"
+            class="card-img-top51">
+          <div class="card-body51">
+            <h1><b>Alex Fernandes</b></h1>
+            <p class="card-text51">Project Manager</p>
+          </div>
+        </div>
+        <div class="right-card52">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/team_3_3.jpg"
+            class="card-img-top52">
+          <div class="card-body52">
+            <h1><b>Mary Crispy</b></h1>
+            <p class="card-text52">Chief Expert</p>
+          </div>
+        </div>
+        <div class="right-card53">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/team_3_4.jpg"
+            class="card-img-top53">
+          <div class="card-body53">
+            <h1><b>Henry Joseph</b></h1>
+            <p class="card-text53">Product Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="last5">
+        <div class="last51">
+          <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+            alt="Description of the image">
+          <h5> CUSTOMER FEEDBACK</h5>
+        </div>
+        <div class="last511">
+          <h1>What Happy Client Says <span><br>About US?</span></h1>
+        </div>
+
+        <div class="last-card5">
+          <div class="last-card51">
+            <div class="lastcard51">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/testi_3_2.jpg">
+            </div>
+            <h4> &#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+            <div class="circle-card511">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/quote_left_3.svg">
+            </div>
+            <div class="card-body511">
+              <p class="card-text511"> Objectively visualize error-free technology for B2B alignment. Monotonectally
+                harness an expanded array of models via effective collaboration. Globally synergize
+                resouces sucking value via cutting-edge.</p>
+              <h1><b>Jacklin Techie</b></h1>
+              <h3>CEO at Kerala</h3>
+            </div>
+          </div>
+          <div class="last-card52">
+            <div class="lastcard52">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/testi_3_3.jpg">
+            </div>
+            <h4> &#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+            <div class="circle-card522">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/quote_left_3.svg">
+            </div>
+            <div class="card-body522">
+              <p class="card-text522">Objectively visualize error-free technology for B2B alignment. Monotonectally
+                harness an expanded array of models via effective collaboration. Globally synergize
+                resouces sucking value via cutting-edge.</p>
+              <h1><b>Abrahm Khalil</b></h1>
+              <h3>CEO at Goa</h3>
+            </div>
+          </div>
+          <div class="last-card53">
+            <div class="lastcard53">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/testi_3_4.jpg">
+            </div>
+            <h4> &#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+            <div class="circle-card533">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/quote_left_3.svg">
+            </div>
+            <div class="card-body533">
+              <p class="card-text533">Objectively visualize error-free technology for B2B alignment. Monotonectally
+                harness an expanded array of models via effective collaboration. Globally synergize
+                resouces sucking value via cutting-edge.</p>
+              <h1><b>Md Sumon</b></h1>
+              <h3>CEO at Hyderabad</h3>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="content8">
+      <div class="last6">
+        <div class="last6card">
+          <div class="last6cardleft">
+            <img
+              src="https://shubhanshushekhar.com/wp-content/uploads/2023/03/woman-working-call-center-talking-with-clients-using-headphones-microphone_23-2149256143-e1680088597613.png">
+          </div>
+          <div class="last6cardright">
+            <div class="card6right1">
+              <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+                alt="Description of the image">
+              <h5> LET'S CONSULTATION</h5>
+            </div>
+            <div class="card6right2">
+              <h1>Let's Talk About Business Solutions<span> With Us</span></h1>
+            </div>
+            <div class="last6button">
+              <button type="button" class="btn btn-primary btn-lg"> CONTACT US &rarr;</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content9">
+      <div class="left9">
+        <img src="https://themeholy.com/wordpress/fresh/wp-content/uploads/2024/02/title_shape_2.svg"
+          alt="Description of the image">
+        <h5> NEWS & ARTICLES</h5>
+      </div>
+
+      <div class="left91">
+        <h1>Get Every Single Update<span> Blog</span></h1>
+      </div>
+
+      <div class="right9">
+        <div class="right-card91">
+          <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2023/02/blog-s-1-4-391x250.jpg"
+            class="card-img-top91">
+          <div class="card-body91">
+            <div class="cardbody911">
+              <p> &#128197;13th Feb, 2023</p>
+              <p>&#128172;3 Comments</p>
+            </div>
+            <div class="cardbody912">
+              <h1><b>What's Holding Back The Solution Industry?</b></h1>
+            </div>
+            <div class="card-text91">
+              <p>Distinctively enable premiuim expertise for multifunctional action items.
+                Energistically benchmark worldwide communities.</p>
+            </div>
+            <hr>
+            <div class="card91last">
+              <img src="https://secure.gravatar.com/avatar/86d033e2d42a0631cc4f58b82dd01de9?s=96&d=mm&r=g">
+              <p>By WebTeck</p>
+              <h5>READ MORE &#x279C;</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-card92">
+          <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2023/02/blog-s-1-3-391x250.jpg"
+            class="card-img-top92">
+          <div class="card-body92">
+            <div class="cardbody922">
+              <p> &#128197;13th Feb, 2023</p>
+              <p>&#128172;3 Comments</p>
+            </div>
+            <div class="cardbody921">
+              <h1><b>Regional Manager Limited Time Management</b></h1>
+            </div>
+            <div class="card-text92">
+              <p>Distinctively enable premiuim expertise for multifunctional action items.
+                Energistically benchmark worldwide communities.</p>
+            </div>
+            <hr>
+            <div class="card92last">
+              <img src="https://secure.gravatar.com/avatar/86d033e2d42a0631cc4f58b82dd01de9?s=96&d=mm&r=g">
+              <p>By WebTeck</p>
+              <h5>READ MORE &#x279C;</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-card93">
+          <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2023/02/blog-s-1-1-391x250.jpg"
+            class="card-img-top93">
+          <div class="card-body93">
+            <div class="cardbody933">
+              <p> &#128197;13th Feb, 2023</p>
+              <p>&#128172;3 Comments</p>
+            </div>
+            <div class="cardbody931">
+              <h1><b>Web Development Trend in Peak</b></h1>
+            </div>
+            <div class="card-text93">
+              <p>Distinctively enable premiuim expertise for multifunctional action items.
+                Energistically benchmark worldwide communities.</p>
+            </div>
+            <hr>
+            <div class="card93last">
+              <img src="https://secure.gravatar.com/avatar/86d033e2d42a0631cc4f58b82dd01de9?s=96&d=mm&r=g">
+              <p>By WebTeck</p>
+              <h5>READ MORE &#x279C;</h5>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="content10">
+      <div class="content-101">
+        <div class="content-10-first">
+          <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2024/02/logo-white.svg">
+          <span></span>
+        </div>
+        <div class="content-10-middle">
+          <h1>News Subscription</h1>
+          <h3>Get Latest Deals from Waker’s Inbox & Subscribe Now</h3>
+        </div>
+        <div class="content-10-last">
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="  Email Address">
+          </div>
+          <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+        </div>
+      </div>
+
+      <div class="content-102">
+        <hr>
+      </div>
+      <div class="content-103">
+        <div class="content-1031">
+          <div class="first-1031">
+            <h1>ABOUT COMPANY</h1>
+            <span></span>
+          </div>
+          <div class="last-1031">
+            <p>Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create
+              empowered. cost effective users via team driven.</p>
+          </div>
+        </div>
+
+        <div class="content-1032">
+          <div class="first-1032">
+            <h1>QUICK LINKS</h1>
+            <span></span>
+          </div>
+          <div class="last-1032">
+            <h4>> About Us</h4>
+            <h4>> Team</h4>
+            <h4>> Faq</h4>
+            <h4>> Project</h4>
+            <h4>> Contact Us</h4>
+          </div>
+        </div>
+
+        <div class="content-1033">
+          <div class="first-1033">
+            <h1>IT SERVICES</h1>
+            <span></span>
+          </div>
+          <div class="last-1033">
+            <h4>> Web Development</h4>
+            <h4>> Business Development</h4>
+            <h4>> Product Management</h4>
+            <h4>> UI/UX Design</h4>
+            <h4>> Cloud Service</h4>
+          </div>
+
+        </div>
+        <div class="content-1034">
+          <div class="first-1034">
+            <h1>RECENT POSTS</h1>
+            <span></span>
+          </div>
+          <div class="last-1034">
+            <div class="last-341">
+              <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2023/02/blog-s-1-4-391x250.jpg">
+              <img src="https://wordpress.themeholy.com/webteck/wp-content/uploads/2023/02/blog-s-1-1-391x250.jpg">
+            </div>
+            <div class="last-342">
+              <div class="last-421">
+                <h4>Unsatiable Entreaties May Collecting Power.</h4>
+                <p> &#128197;13th Feb, 2023</p>
+              </div>
+              <div class="last-422">
+                <h4>Regional Manager Limited Time Management.</h4>
+                <p> &#128197;13th Feb, 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <!-- Footer content goes here -->
+
+    <div class="foot1">
+      <h5>Copyright &copy; 2024 Raunak. All Rights Reserved.</h5>
+    </div>
+
+
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="codetest.js"></script>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
